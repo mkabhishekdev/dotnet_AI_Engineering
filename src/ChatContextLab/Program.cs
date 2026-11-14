@@ -211,7 +211,6 @@ while (true)
     }
 
     string answer = string.Join("", answerParts);
-    answer = answer.Replace("**", "");
     if (!string.IsNullOrWhiteSpace(answer))
     {
         history.Add(userMessage);
