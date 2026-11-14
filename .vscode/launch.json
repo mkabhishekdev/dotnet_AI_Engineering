@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DotNet AI Chat App",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "dotnet-ai-chat-app",
+            "program": "${workspaceFolder}/src/ChatContextLab/bin/Debug/net8.0/ChatContextLab.dll",
+            "cwd": "${workspaceFolder}/src/ChatContextLab",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        }
+    ]
+}
