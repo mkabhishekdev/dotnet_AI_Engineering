@@ -127,7 +127,22 @@ while (true)
 
     var requestTimer = Stopwatch.StartNew();
 
-    using var response = await client.PostAsJsonAsync(endpoint, requestBody);
+    HttpResponseMessage httpResponse;
+    try
+    {
+        httpResponse = await client.PostAsJsonAsync(endpoint, requestBody);
+    }
+    catch (HttpRequestException exception)
+    {
+        Console.WriteLine($"Request failed: {exception.Message}");
+        continue;
+    }
+    catch (OperationCanceledException)
+    {
+        Console.WriteLine("The request timed out. Please try again.");
+        continue;
+    }
+    using var response = httpResponse;
 
     string responseBody = await response.Content.ReadAsStringAsync();
     
