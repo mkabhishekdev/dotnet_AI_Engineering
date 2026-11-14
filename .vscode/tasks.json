@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "dotnet-ai-chat-app",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/ChatContextLab/ChatContextLab.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
