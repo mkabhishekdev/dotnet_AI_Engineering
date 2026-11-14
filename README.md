@@ -1,7 +1,8 @@
 # DOTNET_AI_Engineering
 .NET AI Based Projects
 
-Project 1 - Chat and Context : DotNet AI Chat App (https://github.com/mkabhishekdev/dotnet_AI_Engineering/tree/main/src/ChatContextLab)
+PROJECT 1 - Chat and Context : DotNet AI Chat App (https://github.com/mkabhishekdev/dotnet_AI_Engineering/tree/main/src/ChatContextLab)
+   
    A .NET-based AI chat application that interacts with the Gemini API, providing a command-line chat interface with conversation history, prompt customization, and token usage reporting. 
    
    Whats Built?: A console chat application with conversation history, system instructions, token reporting, response timing, and streaming.
