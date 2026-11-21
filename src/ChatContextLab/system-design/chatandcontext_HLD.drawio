@@ -1,83 +1,83 @@
-<mxfile host="app.diagrams.net">
-  <diagram name="Page-1" id="fdqurpA1MLWuUvmo3cEL">
-    <mxGraphModel dx="1414" dy="824" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Terminal input and output" vertex="1">
-          <mxGeometry height="60" width="250" x="289" y="60" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="470" y="120" as="sourcePoint" />
-            <mxPoint x="470" y="230" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Your question" vertex="1">
-          <mxGeometry height="30" width="100" x="470" y="160" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Chat Coordinator" vertex="1">
-          <mxGeometry height="80" width="206" x="380" y="230" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="536" y="310" as="sourcePoint" />
-            <mxPoint x="536" y="440" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Instructions and Conversation&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="60" x="550" y="350" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="AI Client" vertex="1">
-          <mxGeometry height="60" width="120" x="480" y="440" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-8" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="545" y="610" as="sourcePoint" />
-            <mxPoint x="545" y="500" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HTTPS request and response&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="60" x="550" y="540" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Gemini API - Google Servers" vertex="1">
-          <mxGeometry height="60" width="220" x="440" y="620" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-11" edge="1" parent="1" style="curved=1;curveGeometry=1;endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
-          <mxGeometry height="50" relative="1" width="50" x="-0.3444" as="geometry">
-            <Array as="points">
-              <mxPoint x="530" y="440" />
-              <mxPoint x="480" y="390" />
-            </Array>
-            <mxPoint x="480" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="320" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Generated Answer&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="60" x="410" y="380" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-13" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="400" y="230" as="sourcePoint" />
-            <mxPoint x="400" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Display Answer&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="60" x="340" y="170" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Conversation history in Memory&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="190" x="130" y="440" as="geometry" />
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-16" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="qrWaWVwsvFgqM0m-6iq4-4" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="239" y="440" as="sourcePoint" />
-            <mxPoint x="289" y="390" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="qrWaWVwsvFgqM0m-6iq4-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Read and Update&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="60" x="240" y="350" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram name="Page-1" id="fdqurpA1MLWuUvmo3cEL">
+        <mxGraphModel dx="756" dy="706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Terminal input and output&lt;/font&gt;" vertex="1">
+                    <mxGeometry height="60" width="250" x="289" y="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
+                    <mxGeometry height="50" relative="1" width="50" as="geometry">
+                        <mxPoint x="470" y="120" as="sourcePoint"/>
+                        <mxPoint x="470" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Your question" vertex="1">
+                    <mxGeometry height="30" width="100" x="470" y="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Chat Coordinator&lt;/font&gt;&lt;/b&gt;" vertex="1">
+                    <mxGeometry height="80" width="220" x="366" y="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
+                    <mxGeometry height="50" relative="1" width="50" as="geometry">
+                        <mxPoint x="536" y="310" as="sourcePoint"/>
+                        <mxPoint x="536" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Instructions and Conversation&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="30" width="60" x="550" y="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;AI Client&lt;/font&gt;" vertex="1">
+                    <mxGeometry height="60" width="120" x="480" y="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-8" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
+                    <mxGeometry height="50" relative="1" width="50" as="geometry">
+                        <mxPoint x="545" y="610" as="sourcePoint"/>
+                        <mxPoint x="545" y="500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HTTPS request and response&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="30" width="60" x="550" y="540" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Gemini API - Google Servers&lt;/font&gt;" vertex="1">
+                    <mxGeometry height="60" width="220" x="440" y="620" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-11" edge="1" parent="1" style="curved=1;curveGeometry=1;endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
+                    <mxGeometry height="50" relative="1" width="50" x="-0.3444" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="530" y="440"/>
+                            <mxPoint x="480" y="390"/>
+                        </Array>
+                        <mxPoint x="480" y="440" as="sourcePoint"/>
+                        <mxPoint x="450" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Generated Answer&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="30" width="60" x="410" y="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-13" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
+                    <mxGeometry height="50" relative="1" width="50" as="geometry">
+                        <mxPoint x="400" y="230" as="sourcePoint"/>
+                        <mxPoint x="400" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Display Answer&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="30" width="60" x="340" y="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Conversation history in Memory&lt;/font&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="60" width="190" x="130" y="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-16" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="qrWaWVwsvFgqM0m-6iq4-4" value="">
+                    <mxGeometry height="50" relative="1" width="50" as="geometry">
+                        <mxPoint x="239" y="440" as="sourcePoint"/>
+                        <mxPoint x="289" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="qrWaWVwsvFgqM0m-6iq4-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Read and Update&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="30" width="60" x="240" y="350" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
