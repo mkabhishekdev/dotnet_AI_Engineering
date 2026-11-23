@@ -4,7 +4,7 @@ using System.Text.Json;
 
 if (args.Contains("--attention"))
 {
-    RunAttentionDemo();
+    RunAttentionDemo(args.Contains("--causal"));
     return;
 }
 
@@ -173,12 +173,25 @@ static double CosineSimilarity(float[] left, float[] right)
         (Math.Sqrt(leftLengthSquared) * Math.Sqrt(rightLengthSquared));
 }
 
-static void RunAttentionDemo()
+static void RunAttentionDemo(bool useCausalMask)
 {
-    double riverScore = 4;
-    double loanScore = 1;
+    const int currentPosition = 5; // approved
+    const int riverPosition = 4;
+    const int loanPosition = 7;
 
-    // Softmax turns the scores into weights that sum to 1.
+    double riverScore = 1;
+    double loanScore = 3;
+
+    if (useCausalMask && riverPosition > currentPosition)
+    {
+        riverScore = double.NegativeInfinity;
+    }
+
+    if (useCausalMask && loanPosition > currentPosition)
+    {
+        loanScore = double.NegativeInfinity;
+    }
+
     double riverExp = Math.Exp(riverScore);
     double loanExp = Math.Exp(loanScore);
     double total = riverExp + loanExp;
@@ -186,15 +199,7 @@ static void RunAttentionDemo()
     double riverWeight = riverExp / total;
     double loanWeight = loanExp / total;
 
-    // Made-up two-dimensional value vectors.
-    var river = (X: 1.0, Y: 0.0);
-    var loan = (X: 0.0, Y: 1.0);
-
-    double outputX = riverWeight * river.X + loanWeight * loan.X;
-    double outputY = riverWeight * river.Y + loanWeight * loan.Y;
-
     Console.WriteLine($"Weight on river: {riverWeight:F4}");
     Console.WriteLine($"Weight on loan:  {loanWeight:F4}");
-    Console.WriteLine($"Attention output for bank: [{outputX:F4}, {outputY:F4}]");
 }
 
