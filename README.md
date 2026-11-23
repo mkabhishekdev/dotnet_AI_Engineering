@@ -10,13 +10,12 @@ A .NET 8 console app that calls the Gemini API over HTTP. It lets me chat across
 
 - **Chat loop.** The app reads my message, sends it to Gemini using `HttpClient`, and displays the answer from the JSON response.
 - **Conversation history.** The app keeps my messages and Gemini’s replies in memory and includes them in each follow-up request. The `clear` command starts a fresh conversation, and `exit` ends the session.
-- **System instructions.** The app asks Gemini to act as a .NET learning assistant and explain concepts in simple English.
 - **Token usage and response timing.** The app shows the token counts reported by Gemini and measures how long it takes to receive the full response.
 - **Local setup.** The Gemini API key is stored using .NET User Secrets. VS Code can launch the app in a separate macOS Terminal window.
 
 **What's Learnt**
 
-The app creates the chat experience by deciding what to send with each request. If I say “My project is called FirstGen” and later ask “What’s my project called?”, Gemini can answer because my app sends the earlier message again. After I type `clear`, the next request starts with fresh history. Keeping more messages also means sending more input tokens.
+The app creates the chat experience by deciding what to send with each request. If I say “My project is called DotNet Project” and later ask “What’s my project called?”, Gemini can answer because my app sends the earlier message again. After I type `clear`, the next request starts with fresh history. Keeping more messages also means sending more input tokens.
 
 **Engineering Question Answered**
 
