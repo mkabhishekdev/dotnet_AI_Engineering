@@ -1,6 +1,15 @@
 # DOTNET_AI_Engineering
 .NET AI Based Projects
 
+## Platform and Technology Choices
+
+- **Gemini API** — I chose Gemini because its free tier let me experiment with chat, token counting, and embeddings without paying for model access.
+- **Console apps** — I use small console apps so I can focus on how the AI calls work and inspect results such as token counts, similarity scores, and response times directly in the terminal.
+- **REST with `HttpClient`** — I call Gemini directly from C# so I can see what my app sends and how it handles the response. I keep the API key in .NET User Secrets for local development.
+- **.NET project references** — I keep each lab in its own project and reuse code where it makes sense. For example, the performance lab uses the Gemini embedding client and vector math from the Tokens and Meaning lab.
+
+
+
 ## PROJECT 1 - Chat and Context: DotNet AI Chat App
 [GitHub Project](https://github.com/mkabhishekdev/dotnet_AI_Engineering/tree/main/src/ChatContextLab)
 
@@ -46,3 +55,30 @@ A word can be split into multiple tokens. An embedding represents a piece of tex
 How can a .NET app find related text when people use different words?
 
 Generate embeddings for the query and candidate texts using the same model, calculate cosine similarity, and rank the candidates by score. This is the part which is reused in the RAG project to find relevant document passages.
+
+
+
+## PROJECT 3 - AI Performance: DotNet AI Performance Lab
+[GitHub Project](https://github.com/mkabhishekdev/dotnet_AI_Engineering/tree/main/src/AIPerformanceLab)
+
+A .NET 8 console app that explores how to make embedding-based search faster, send fewer requests to Gemini, and store vectors using less space.
+
+**What’s Built**
+
+- **Embedding cache.** The app saves candidate vectors in an in-memory dictionary. When a new question uses the same candidates, the app reuses their vectors and calculates fresh similarity scores for the new question.
+- **Sequential and concurrent requests.** I compared sending three embedding requests one at a time with starting all three and waiting for them using `Task.WhenAll`. In my test, the sequential run took 1,688 ms and the concurrent run took 528 ms. Both sent three HTTP requests.
+- **Batch embedding.** The app sends three sentences to Gemini in one HTTP request and gets three vectors back. My batch run took 1,014 ms.
+- **Smaller vectors.** I stored each candidate vector as a `Half[]` instead of a `float[]`. The 3,072 numbers took 6,144 bytes instead of 12,288. The scores changed slightly, and all three candidates ranked in the same order for my test query.
+- **Shared code.** I used a .NET project reference to reuse `GeminiEmbeddingClient` and `VectorMath` from `TokensAndMeaningLab`.
+
+**What’s Learnt**
+
+Each technique solves a different problem. Caching skips repeat work. Concurrency lets requests spend less time waiting in line. Batching puts several inputs into one request. Using `Half` stores the same number of coordinates in less space, with a small loss of precision.
+
+In my run, concurrency finished fastest, while batching sent the fewest HTTP requests. That showed me why elapsed time, request count, and storage size are worth measuring separately.
+
+**Engineering Question Answered**
+
+How can I make embedding-based search more efficient, and how do I check whether the results change?
+
+Reuse embeddings for text I’ve already processed, compare ways to send new requests, and measure how much space the vectors take. When I change how I store vectors, I can compare the similarity scores and check whether the same passages still come out on top. This carries into the RAG project, where those rankings decide which document passages Gemini sees.
