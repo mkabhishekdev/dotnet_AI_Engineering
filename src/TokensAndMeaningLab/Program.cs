@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Net.Http.Json;
 using System.Text.Json;
+using TokensAndMeaningLab;
 
 if (args.Contains("--attention"))
 {
@@ -76,7 +77,7 @@ Console.WriteLine($"Gemini input tokens: {tokenCount}");
 */
 
 // request an embedding for the input phrase using the Gemini embedding model
-float[]? referenceVector = await GetEmbeddingAsync(client, phrase);
+float[]? referenceVector = await GeminiEmbeddingClient.GetEmbeddingAsync(client, phrase);
 if (referenceVector is null)
 {
     return;
@@ -96,13 +97,13 @@ var matches = new List<(string Text, double Score)>();
 
 foreach (string candidate in candidates)
 {
-    float[]? candidateVector = await GetEmbeddingAsync(client, candidate);
+    float[]? candidateVector = await GeminiEmbeddingClient.GetEmbeddingAsync(client, candidate);
     if (candidateVector is null)
     {
         continue;
     }
 
-    double score = CosineSimilarity(referenceVector, candidateVector);
+    double score = VectorMath.CosineSimilarity(referenceVector, candidateVector);
     matches.Add((candidate, score));
 }
 
@@ -113,65 +114,8 @@ foreach (var match in matches.OrderByDescending(match => match.Score))
     Console.WriteLine($"{match.Score:F4}  {match.Text}");
 }
 
-static async Task<float[]?> GetEmbeddingAsync(HttpClient client, string text)
-{
-    const string endpoint =
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent";
 
-    var request = new
-    {
-        taskType = "SEMANTIC_SIMILARITY",
-        content = new
-        {
-            parts = new[] { new { text } }
-        }
-    };
 
-    using var response = await client.PostAsJsonAsync(endpoint, request);
-    if (!response.IsSuccessStatusCode)
-    {
-        Console.WriteLine($"Embedding request failed: HTTP {(int)response.StatusCode}");
-        return null;
-    }
-
-    var result = await response.Content.ReadFromJsonAsync<JsonElement>();
-
-    return result.GetProperty("embedding")
-        .GetProperty("values")
-        .EnumerateArray()
-        .Select(value => value.GetSingle())
-        .ToArray();
-}
-
-static double CosineSimilarity(float[] left, float[] right)
-{
-    if (left.Length != right.Length)
-    {
-        throw new ArgumentException("The vectors must have the same number of dimensions.");
-    }
-
-    double dotProduct = 0;
-    double leftLengthSquared = 0;
-    double rightLengthSquared = 0;
-
-    for (int i = 0; i < left.Length; i++)
-    {
-        double x = left[i];
-        double y = right[i];
-
-        dotProduct += x * y;
-        leftLengthSquared += x * x;
-        rightLengthSquared += y * y;
-    }
-
-    if (leftLengthSquared == 0 || rightLengthSquared == 0)
-    {
-        throw new ArgumentException("Cosine similarity requires nonzero vectors.");
-    }
-
-    return dotProduct /
-        (Math.Sqrt(leftLengthSquared) * Math.Sqrt(rightLengthSquared));
-}
 
 static void RunAttentionDemo(bool useCausalMask)
 {
